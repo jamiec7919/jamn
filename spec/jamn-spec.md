@@ -1,3 +1,6 @@
+JAMN - JAMN (is) Asset Meta Notation
+Spec - Prerelease
+
 Basic Types
 -----------
 
