@@ -1,0 +1,59 @@
+# JAMN - JAMN (is) Asset Meta Notation
+[
+"entry";
+"entyry";
+]
+{
+	"field1" : 1
+}
+# Single characters for syntax.
+# Semicolon data terminator 
+# Semicolon insertion rule (newline)
+# Comments (semicolon end?)
+# Explicit value typing (optional) using $type
+# colon field designator
+# Alternate representations using | pipe (for e.g. bit level floating point)
+
+{
+	"a_float" : 1.333 | $f32 h12341111
+  "a reference" : $ref "/path/to/object/0"
+}
+
+"top_level"
+
+"top_level2" : 3  # this is an error as top level is implicitly an array at this point.
+
+{ "level1":3}  # this is ok
+
+# Anything may have a type designator in front of it.
+
+# Type designator must be followed on same line.
+
+#  Spec < 2000 words...
+
+# By allowing # comments after objects in arrays we can help the conflict issue?
+
+# Explicite whitespace characters
+
+# Encoding MUST be UTF-8, with optional byte-order prefix if file.
+
+# Semi-colons inserted at linebreak if last token was }, ], other alpha-text or closing " or `.
+# Multi-line strings (embedded new-lines and tabs) enclosed in back-quotes..  ``
+
+# Number formats (decimal, hex, octal, binary, float)
+
+# Built in types f32, f64, i8, i16, i32, i64, ref.  However note that all types are optional at parser
+# level so they may be ignored.  Note alternate formats MUST have a type designator but
+# may be completely ignored (although processors SHOULD pass them through).
+
+# Comments MUST NOT be used as parsing directives.  Comments are values.
+
+
+# Special values - denoted with %.  Including %true, %false, %null  (boolean true, false and null)
+# %nan, %inf  (floating point nans/infinities)
+
+# Should a naked list of values or fields automatically create that type of object at top level?
+# Yes, a file is either:  1 single value, an array of values, an object/dict.  Each of these
+# can be determined after only 1 lookahead. 
+
+# Naked keys are allowed but with restricted characters.

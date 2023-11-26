@@ -1,0 +1,13 @@
+$material {
+	"name" : "Material1"
+	"program" : "pbr_program1"
+}
+$material {
+	"name" : "Material2"
+	"program" : "pbr_program1"
+}
+$program {
+	"name" : "pbr_shader1"
+	"frag" : "pbr_frag.glsl"
+	"vertex" : "pbr_vertex.glsl"
+}
